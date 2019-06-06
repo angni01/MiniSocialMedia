@@ -22,14 +22,22 @@ namespace Domain.Repository
 			throw new NotImplementedException();
 		}
 
-		public void insert(user_information user)
+		public void insert(int ID, string fname, string lname, string bdate, string address)
 		{
-			throw new NotImplementedException();
+			userList.Add(
+				new user_information
+				{
+					ID = ID,
+					Firstname = fname,
+					Lastname = lname,
+					Birthdate = bdate,
+					Address = address
+				});
 		}
 
-		public IEnumerable<user_information> SelectAll()
+		public List<user_information> SelectAll()
 		{
-			throw new NotImplementedException();
+			return userList;
 		}
 
 		public user_information SelectbyID(int ID)

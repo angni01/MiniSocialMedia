@@ -17,9 +17,10 @@ namespace Business
 		{
 			return UserRepository.GetUserRepository().userList;
 		}
-		public void AddUsers(user_information user)
+		public void AddUsers(int ID, string fname, string lname, string bdate, string address, string username, string email, int accountID)
 		{
-			UserRepository.GetUserRepository().userList.Add(user);
+			UserRepository.GetUserRepository().insert(ID, fname, lname, bdate, address);
+			UserAccountRepository.GetUserAccountRepository().insert(username, email, accountID, ID);
 		}
 		public List<status_detail> ViewUserFeed(int ID)
 		{

@@ -21,15 +21,14 @@ namespace Domain.Repository
 			throw new NotImplementedException();
 		}
 
-		public void insert(int ID, string datetime_posted, string status, string posted_by )
+		public void insert(int ID, string status, string posted_by )
 		{
-			statusList.Add(new status_detail {ID=ID, DateTime_posted = datetime_posted, status = status, posted_by = posted_by });
-
+			statusList.Add(new status_detail {ID=ID, DateTime_posted = DateTime.Now.ToString(), status = status, posted_by = posted_by });
 		}
 
-		public IEnumerable<status_detail> SelectAll()
+		public List<status_detail> SelectAll()
 		{
-			throw new NotImplementedException();
+			return statusList;
 		}
 
 		public status_detail SelectbyID(int ID)
