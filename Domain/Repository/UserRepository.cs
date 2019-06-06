@@ -8,20 +8,14 @@ namespace Domain.Repository
 {
 	public class UserRepository
 	{
+
+		private static readonly UserRepository _instance = new UserRepository();
 		public List<user_information> userList = new List<user_information>();
-		//user_information user = new user_information();
-		//ArrayList userList = new ArrayList()
-		//{
-		//	new user_information
-		//	{
-		//		ID = 1,
-		//		Firstname = "Mermellah",
-		//		Lastname = "Angni",
-		//		Birthdate = "12/01/1996",
-		//		Address = "113 Makaturing str., Dansalan."
-		//	},
-						
-		//};
+
+		public static UserRepository GetUserRepository()
+		{
+			return _instance;
+		}
 
 		public void delete(int ID)
 		{

@@ -9,18 +9,18 @@ namespace Business
 {
 	class Newsfeed
 	{
-		PostRespository postrepo = new PostRespository();
 		public List<status_detail> ViewFeeds()
 		{
-			return postrepo.statusList;
+			return PostRespository.GetPostRespository().statusList;
 		}
 		public void ViewPost(int ID)
 		{
 		}
 
-		public void AddPost(status_detail status)
+		public void AddPost(string datetime_posted, string status, string posted_by)
 		{
-			postrepo.statusList.Add(status);
+			int ID = 1;
+			postrepo.insert(ID,datetime_posted, status, posted_by);
 		}
 		public void DeletePost(status_detail status)
 		{
