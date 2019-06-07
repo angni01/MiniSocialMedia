@@ -34,14 +34,14 @@ namespace Domain.Repository
 				});
 		}
 
-		public IEnumerable<user_account> SelectAll()
+		public List<user_account> SelectAll()
 		{
-			throw new NotImplementedException();
+			return userAccountList;
 		}
 
-		public user_account SelectbyID(int ID)
+		public List<user_account> SelectByID()
 		{
-			throw new NotImplementedException();
+			return userAccountList;
 		}
 
 		public void update(user_account user)
